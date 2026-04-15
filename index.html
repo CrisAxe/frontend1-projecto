@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Pituxa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Casa Pituxa</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Secção Sobre -->
+    <section id="sobre" class="sec">
+        <h2>Sobre Nós</h2>
+        <p>Casa Pituxa é um restaurante familiar que oferece uma experiência gastronômica autêntica, com pratos tradicionais e ingredientes frescos.</p>
+    </section>
+
+    <!-- Secção Menu -->
+    <section id="menu" class="sec">
+        <h2>Menu</h2>
+        <div class="menu-grid">
+            <div class="prato">
+                <h3>Bife à Portuguesa</h3>
+                <p>A receita de Bife à Portuguesa é um clássico da gastronomia de Portugal, caracterizado por um bife suculento (geralmente de vaca/vazia) servido com um molho rico à base de vinho branco, alho, louro e mostarda, frequentemente acompanhado por presunto frito</p>
+            </div>
+            <div class="prato">
+                <h3>Pato laranja</h3>
+                <p>O Pato com Laranja (Canard à l'orange em francês) é um prato clássico da gastronomia internacional, conhecido pela sua combinação agridoce e sabor intenso. </p>
+            </div>
+            <div class="prato">
+                <h3>Frango Grelhado</h3>
+                <p>Marinado com ervas frescas e limão.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Contactos -->
+    <section id="contactos" class="sec">
+        <h2>Contactos</h2>
+        <p>📍 Rua Cargo da Zorra</p>
+        <p>📞 912 345 678</p>
+        <p>⏰ Aberto todos os dias das 19h às 23h</p>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2026 Casa Pituxa</p>
+    </footer>
+    <section class="reserva">
+  <h2>Fazer Reserva</h2>
+
+  <form class="form-reserva">
+    <label>
+      Nome:
+      <input type="text" name="nome" required>
+    </label>
+
+    <label>
+      Email:
+      <input type="email" name="email" required>
+    </label>
+
+    <label>
+      Telefone:
+      <input type="tel" name="telefone" required>
+    </label>
+
+    <label>
+      Data:
+      <input type="date" name="data" required>
+    </label>
+
+    <label>
+      Hora:
+      <input type="time" name="hora" required>
+    </label>
+
+    <label>
+      Número de pessoas:
+      <input type="number" name="pessoas" min="1" required>
+    </label>
+
+    <label>
+      Observações:
+      <textarea name="obs" rows="4"></textarea>
+    </label>
+
+    <button type="submit">Reservar</button>
+  </form>
+</section>
+
+
+</body>
+</html>

@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Cabeçalho -->
     <header>
         <h1>Casa Pituxa</h1>
         <nav>
@@ -20,13 +19,11 @@
         </nav>
     </header>
 
-    <!-- Secção Sobre -->
     <section id="sobre" class="sec">
         <h2>Sobre Nós</h2>
         <p>Casa Pituxa é um restaurante familiar que oferece uma experiência gastronômica autêntica, com pratos tradicionais e ingredientes frescos.</p>
     </section>
 
-    <!-- Secção Menu -->
     <section id="menu" class="sec">
         <h2>Menu</h2>
         <div class="menu-grid">
@@ -45,7 +42,6 @@
         </div>
     </section>
 
-    <!-- Secção Contactos -->
     <section id="contactos" class="sec">
         <h2>Contactos</h2>
         <p>📍 Rua Cargo da Zorra</p>
@@ -53,7 +49,6 @@
         <p>⏰ Aberto todos os dias das 19h às 23h</p>
     </section>
 
-    <!-- Rodapé -->
     <footer>
         <p>© 2026 Casa Pituxa</p>
     </footer>
@@ -63,37 +58,37 @@
   <form class="form-reserva">
     <label>
       Nome:
-      <input type="text" name="nome" required>
+      <input id="name" type="text" name="nome" required>
     </label>
 
     <label>
       Email:
-      <input type="email" name="email" required>
+      <input id="email" type="email" name="email" required>
     </label>
 
     <label>
       Telefone:
-      <input type="tel" name="telefone" required>
+      <input id="phone" type="tel" name="telefone" required>
     </label>
 
     <label>
       Data:
-      <input type="date" name="data" required>
+      <input id="date" type="date" name="data" required>
     </label>
 
     <label>
       Hora:
-      <input type="time" name="hora" required>
+      <input id="time" type="time" name="hora" required min="19:00" max="23:00" step="1800">
     </label>
 
     <label>
       Número de pessoas:
-      <input type="number" name="pessoas" min="1" required>
+      <input id="guests" type="number" name="pessoas" min="1" required>
     </label>
 
     <label>
       Observações:
-      <textarea name="obs" rows="4"></textarea>
+      <textarea id="obs" name="obs" rows="4"></textarea>
     </label>
 
     <button type="submit">Reservar</button>

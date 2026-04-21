@@ -14,7 +14,7 @@ form.addEventListener("submit", async function(e) {
     };
 
     try {
-        const response = await fetch("https://meuprojeto.mockapi.io/reservas", {          
+        const response = await fetch("https://69e6914e68208c1debe7b191.mockapi.io/reservations", {          
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -32,3 +32,5 @@ form.addEventListener("submit", async function(e) {
         alert("Erro ao enviar reserva. Tente novamente.");
     }
 });
+
+

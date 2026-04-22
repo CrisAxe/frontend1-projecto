@@ -1,0 +1,161 @@
+.reserva-section {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.reserva-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.reserva-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+.reserva-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.input-group input {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 8px rgba(39,174,96,0.3);
+    outline: none;
+}
+
+.input-group textarea {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    min-height: 120px;
+    resize: vertical;
+    transition: 0.3s;
+}
+
+.input-group textarea:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 8px rgba(39,174,96,0.3);
+    outline: none;
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-reservar {
+    padding: 16px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-reservar:hover {
+    background: #1e8449;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* SELECT DE HORAS */
+#hora-select {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="20" width="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 20,0 10,10"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+#hora-select:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 8px rgba(39,174,96,0.3);
+    outline: none;
+}
+
+/* SELECT DE HORAS */
+#hora-select {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="20" width="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 20,0 10,10"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+#hora-select:hover {
+    transform: scale(1.02);
+}
+
+#hora-select:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 8px rgba(39,174,96,0.3);
+    outline: none;
+}
+
+/* Inputs válidos */
+input:valid, select:valid, textarea:valid {
+    border-color: #27ae60;
+}
+
+/* Inputs inválidos */
+input:invalid, select:invalid, textarea:invalid {
+    border-color: #e74c3c;
+}
+
+

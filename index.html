@@ -1,101 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa Pituxa</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sobre.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/contactos.css">
+    <link rel="stylesheet" href="css/reservas.css">
+
+    <!-- SweetAlert2 (popups modernos) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("SEU_PUBLIC_KEY_AQUI");
+    </script>
 </head>
+
 <body>
 
-    <header>
-        <h1>Casa Pituxa</h1>
-        <nav>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="brand">
+            <img src="LOGO B.png" alt="Logo Casa Pituxa">
+        </div>
+
+        <nav class="main-nav">
             <ul>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#contactos">Contactos</a></li>
             </ul>
         </nav>
+
+        <a class="btn-reserva" href="#reservas">Reservar Mesa</a>
     </header>
 
-    <section id="sobre" class="sec">
-        <h2>Sobre Nós</h2>
-        <p>Casa Pituxa é um restaurante familiar que oferece uma experiência gastronômica autêntica, com pratos tradicionais e ingredientes frescos.</p>
-    </section>
-
-    <section id="menu" class="sec">
-        <h2>Menu</h2>
-        <div class="menu-grid">
-            <div class="prato">
-                <h3>Bife à Portuguesa</h3>
-                <p>A receita de Bife à Portuguesa é um clássico da gastronomia de Portugal, caracterizado por um bife suculento (geralmente de vaca/vazia) servido com um molho rico à base de vinho branco, alho, louro e mostarda, frequentemente acompanhado por presunto frito</p>
-            </div>
-            <div class="prato">
-                <h3>Pato laranja</h3>
-                <p>O Pato com Laranja (Canard à l'orange em francês) é um prato clássico da gastronomia internacional, conhecido pela sua combinação agridoce e sabor intenso. </p>
-            </div>
-            <div class="prato">
-                <h3>Frango Grelhado</h3>
-                <p>Marinado com ervas frescas e limão.</p>
-            </div>
+    <!-- HERO -->
+    <section class="hero reveal">
+        <div class="hero-content">
+            <h2>Bem-vindo à Casa Pituxa</h2>
+            <p>Tradição, sabor e qualidade desde sempre</p>
+            <a href="#menu" class="hero-btn reveal-zoom">Ver Menu</a>
         </div>
     </section>
 
-    <section id="contactos" class="sec">
-        <h2>Contactos</h2>
-        <p>📍 Rua Cargo da Zorra</p>
-        <p>📞 912 345 678</p>
-        <p>⏰ Aberto todos os dias das 19h às 23h</p>
+    <!-- RESERVAS -->
+    <section id="reservas" class="reserva-section reveal-zoom">
+        <h2 class="reserva-title">Reservar Mesa</h2>
+
+        <form class="reserva-form">
+            <div class="input-group">
+                <label>Nome</label>
+                <input type="text" name="nome" placeholder="O seu nome" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="exemplo@gmail.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>Telefone</label>
+                <input type="tel" name="telefone" placeholder="912 345 678" required>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Data</label>
+                    <input type="date" name="data" id="data" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Hora</label>
+                    <select name="hora" id="hora-select" required>
+                        <option value="">Escolha a hora</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Número de Pessoas</label>
+                <input type="number" name="pessoas" min="1" max="20" placeholder="2" required>
+            </div>
+
+            <div class="input-group">
+                <label>Observações</label>
+                <textarea name="obs" placeholder="Alguma preferência?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-reservar">Confirmar Reserva</button>
+        </form>
     </section>
 
-    <footer>
-        <p>© 2026 Casa Pituxa</p>
-    </footer>
-    <section class="reserva">
-  <h2>Fazer Reserva</h2>
-
-  <form class="form-reserva">
-    <label>
-      Nome:
-      <input id="name" type="text" name="nome" required>
-    </label>
-
-    <label>
-      Email:
-      <input id="email" type="email" name="email" required>
-    </label>
-
-    <label>
-      Telefone:
-      <input id="phone" type="tel" name="telefone" required>
-    </label>
-
-    <label>
-      Data:
-      <input id="date" type="date" name="data" required>
-    </label>
-
-    <label>
-      Hora:
-      <input id="time" type="time" name="hora" required min="19:00" max="23:00" step="1800">
-    </label>
-
-    <label>
-      Número de pessoas:
-      <input id="guests" type="number" name="pessoas" min="1" required>
-    </label>
-
-    <label>
-      Observações:
-      <textarea id="obs" name="obs" rows="4"></textarea>
-    </label>
-
-    <button type="submit">Reservar</button>
-  </form>
-</section>
-
-<script src="reservation.js"></script>
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/reservation.js"></script>
 
 </body>
 </html>

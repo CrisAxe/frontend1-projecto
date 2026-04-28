@@ -1,16 +1,3 @@
-const dataInput = document.getElementById("data");
-dataInput.addEventListener("input", () => {
-    const d = new Date(dataInput.value);
-    if (d.getDay() === 0) {
-        Swal.fire({
-            icon: "error",
-            title: "Domingo indisponível",
-            text: "O restaurante está fechado ao domingo.",
-        });
-        dataInput.value = "";
-    }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
     const horaSelect = document.getElementById("hora-select");
 
@@ -93,15 +80,7 @@ form.addEventListener("submit", async function(e) {
         if (!response.ok) throw new Error("Erro na API");
 
         
-        emailjs.send("service_id", "template_id", {
-            nome,
-            email,
-            telefone,
-            data,
-            hora,
-            pessoas,
-            obs
-        });
+
 
         Swal.fire({
             icon: "success",

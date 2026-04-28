@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas – Casa Pituxa</title>
 
-    
+
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/hero.css">
@@ -21,76 +22,76 @@
 
 <body>
 
-<header class="navbar">
-    <div class="brand">
-        <img src="../pics/LOGO B.png" alt="Logo Casa Pituxa">
-    </div>
-
-    <nav class="main-nav">
-        <ul>
-            <li><a href="../index.html#home">Home</a></li>
-            <li><a href="../index.html#sobre">Sobre</a></li>
-            <li><a href="../index.html#menu">Menu</a></li>
-            <li><a href="../index.html#contactos">Contactos</a></li>
-        </ul>
-    </nav>
-
-    <a class="btn-reserva" href="reservas.html">Reservar Mesa</a>
-</header>
-
-<section id="reservas" class="reserva-section reveal-zoom">
-    <h2 class="reserva-title">Reservar Mesa</h2>
-
-    <form class="reserva-form">
-        <div class="input-group">
-            <label>Nome</label>
-            <input type="text" name="nome" placeholder="O seu nome" required>
+    <header class="navbar">
+        <div class="brand">
+            <img src="../pics/LOGO B.png" alt="Logo Casa Pituxa">
         </div>
 
-        <div class="input-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="exemplo@gmail.com" required>
-        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a class="btn-sobre" href="html/sobre.html">Sobre</a></li>
+                <li><a class="btn-menu" href="html/menu.html">Menu</a></li>
+                <li><a class="btn-galeria" href="html/galeria.html">Galeria</a></li>
+                <li><a class="btn-contactos" href="html/contactos.html">Contactos</a></li>
+                <li><a class="btn-reserva" href="html/reservas.html">Reservar</a></li>
+            </ul>
+        </nav>
 
-        <div class="input-group">
-            <label>Telefone</label>
-            <input type="tel" name="telefone" placeholder="912 345 678" required>
-        </div>
+    </header>
 
-        <div class="input-row">
+    <section id="reservas" class="reserva-section reveal-zoom">
+        <h2 class="reserva-title">Reservar</h2>
+
+        <form class="reserva-form">
             <div class="input-group">
-                <label>Data</label>
-                <input type="date" name="data" id="data" required>
+                <label>Nome</label>
+                <input type="text" name="nome" placeholder="O seu nome" required>
             </div>
 
             <div class="input-group">
-                <label>Hora</label>
-                <select name="hora" id="hora-select" required>
-                    <option value="">Escolha a hora</option>
-                </select>
+                <label>Email</label>
+                <input type="email" name="email" placeholder="exemplo@gmail.com" required>
             </div>
-        </div>
 
-        <div class="input-group">
-            <label>Número de Pessoas</label>
-            <input type="number" name="pessoas" min="1" max="250" placeholder="2" required>
-        </div>
+            <div class="input-group">
+                <label>Telefone</label>
+                <input type="tel" name="telefone" placeholder="912 345 678" required>
+            </div>
 
-        <div class="input-group">
-            <label>Observações</label>
-            <textarea name="obs" placeholder="Alguma preferência?"></textarea>
-        </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Data</label>
+                    <input type="date" name="data" id="data" required>
+                </div>
 
-        <button type="submit" class="btn-reservar">Confirmar Reserva</button>
-    </form>
-</section>
+                <div class="input-group">
+                    <label>Hora</label>
+                    <select name="hora" id="hora-select" required>
+                        <option value="">Escolha a hora</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Número de Pessoas</label>
+                <input type="number" name="pessoas" min="1" max="250" placeholder="2" required>
+            </div>
+
+            <div class="input-group">
+                <label>Observações</label>
+                <textarea name="obs" placeholder="Alguma preferência?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-reservar">Confirmar Reserva</button>
+        </form>
+    </section>
 
 
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="../js/scroll.js"></script>
-<script src="../js/reservation.js"></script>
-<script src="../js/reviews.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../js/scroll.js"></script>
+    <script src="../js/reservation.js"></script>
+    <script src="../js/reviews.js"></script>
 
 </body>
-</html>
 
+</html>

@@ -1,0 +1,43 @@
+.reviews-section {
+    color: #030303;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.reviews-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin:auto;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.review-card {
+    min-width: 100%;
+    flex-shrink: 0;
+    padding: 20px;
+    transition: 0.50s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+}
+
+.review-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.slider-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}

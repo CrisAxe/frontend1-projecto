@@ -1,6 +1,3 @@
-// ===============================
-// DESATIVAR DOMINGOS NO CALENDÁRIO
-// ===============================
 const dataInput = document.getElementById("data");
 dataInput.addEventListener("input", () => {
     const d = new Date(dataInput.value);
@@ -14,9 +11,6 @@ dataInput.addEventListener("input", () => {
     }
 });
 
-// ===============================
-// GERAR HORAS AUTOMATICAMENTE
-// ===============================
 document.addEventListener("DOMContentLoaded", () => {
     const horaSelect = document.getElementById("hora-select");
 
@@ -45,9 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gerarHoras();
 });
 
-// ===============================
-// FORMULÁRIO DE RESERVA
-// ===============================
 const form = document.querySelector(".reserva-form");
 
 form.addEventListener("submit", async function(e) {
@@ -61,7 +52,6 @@ form.addEventListener("submit", async function(e) {
     const pessoas = form.querySelector("input[name='pessoas']").value;
     const obs = form.querySelector("textarea[name='obs']").value;
 
-    // ❌ BLOQUEAR DOMINGOS
     const dataSelecionada = new Date(data);
     if (dataSelecionada.getDay() === 0) {
         Swal.fire({
@@ -72,7 +62,6 @@ form.addEventListener("submit", async function(e) {
         return;
     }
 
-    // ❌ BLOQUEAR HORAS FORA DO INTERVALO
     if (hora < "19:00" || hora > "23:00") {
         Swal.fire({
             icon: "error",
@@ -82,7 +71,6 @@ form.addEventListener("submit", async function(e) {
         return;
     }
 
-    // ❌ BLOQUEAR HORAS QUE NÃO SEJAM DE 30 EM 30 MINUTOS
     const [h, m] = hora.split(":").map(Number);
     if (m !== 0 && m !== 30) {
         Swal.fire({
@@ -104,9 +92,7 @@ form.addEventListener("submit", async function(e) {
 
         if (!response.ok) throw new Error("Erro na API");
 
-        // ===============================
-        // EMAILJS — OPCIONAL
-        // ===============================
+        
         emailjs.send("service_id", "template_id", {
             nome,
             email,

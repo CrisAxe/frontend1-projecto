@@ -10,6 +10,7 @@ body {
     background-size: cover;
     color: #fff;
     position: relative;
+    
 }
 
 body::before {
@@ -29,6 +30,10 @@ body::before {
     padding: 20px 10%;
     color: #f8f8f8;
     font-size: 14px;
+    border-radius: 30px;
+    padding: 20px 10%;
+    overflow: hidden;
+
 }
 
 .footer-time {
@@ -52,13 +57,3 @@ body::before {
     position: relative;
     z-index: 2;
 }
-
-.site-footer {
-    text-align: center;
-    padding: 20px 10%;
-    color: #f8f8f8;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(4px);
-}
-

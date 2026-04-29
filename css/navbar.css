@@ -6,10 +6,20 @@
     padding: 20px 40px;
     background: white;
     border-bottom: 1px solid #ddd;
-    position: sticky;
+    position: center;
     top: 0;
     z-index: 999;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin: 40px 10%;
+
 }
+
+ /* position: center;
+    height:305px;
+    overflow: hidden;
+    margin: 40px 10%;
+    border-radius: 25px; */
 
 .brand {
     display: flex;
@@ -42,31 +52,6 @@
 .main-nav ul li a:hover {
     color: #27ae60;
 }
-
-
-.btn-reserva,
-.btn-sobre,
-.btn-galeria,
-.btn-menu,
-.btn-contactos {
-    background: #27ae60;
-    padding: 12px 22px;
-    border-radius: 6px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    font-size: 22px; 
-}
-
-.btn-reserva:hover,
-.btn-sobre:hover,
-.btn-galeria:hover,
-.btn-menu:hover,
-.btn-contactos:hover {
-    background: #1e8449;
-}
-
 
 .navbar.scrolled {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);

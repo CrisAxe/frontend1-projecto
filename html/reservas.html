@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas – Casa Pituxa</title>
 
-
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/hero.css">
@@ -17,6 +16,7 @@
     <link rel="stylesheet" href="../css/reviews.css">
     <link rel="stylesheet" href="../css/info-section.css">
 
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -24,20 +24,21 @@
 
     <header class="navbar">
         <div class="brand">
-            <img src="../pics/LOGO B.png" alt="Logo Casa Pituxa">
+            <a href="../index.html">
+                <img src="../pics/LOGO B.png" alt="Logo Casa Pituxa">
+            </a>
         </div>
 
         <nav class="main-nav">
             <ul>
-                <li><a class="btn-sobre" href="html/sobre.html">Sobre</a></li>
-                <li><a class="btn-menu" href="html/menu.html">Menu</a></li>
-                <li><a class="btn-galeria" href="html/galeria.html">Galeria</a></li>
-                <li><a class="btn-contactos" href="html/contactos.html">Contactos</a></li>
-                <li><a class="btn-reserva" href="html/reservas.html">Reservar</a></li>
+                <li><a class="btn-menu" href="menu.html">Menu</a></li>
+                <li><a class="btn-galeria" href="galeria.html">Galeria</a></li>
+                <li><a class="btn-contactos" href="contactos.html">Contactos</a></li>
+                <li><a class="btn-reserva" href="reservas.html">Reservar</a></li>
             </ul>
         </nav>
-
     </header>
+
 
     <section id="reservas" class="reserva-section reveal-zoom">
         <h2 class="reserva-title">Reservar</h2>
@@ -85,8 +86,13 @@
             <button type="submit" class="btn-reservar">Confirmar Reserva</button>
         </form>
     </section>
+    <footer class="site-footer">
+        <p>Casa Pituxa &copy; <span id="current-year"></span></p>
+        <p class="footer-time">Agora: <span id="current-time"></span></p>
+    </footer>
 
-
+    
+    <script src="../js/datetime.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="../js/scroll.js"></script>
     <script src="../js/reservation.js"></script>

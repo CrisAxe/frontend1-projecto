@@ -1,0 +1,47 @@
+.contactos-section {
+    padding: 60px 10%;
+}
+
+.contactos-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #27ae60;
+}
+
+.contactos-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contactos-mapa {
+    flex: 1 1 500px;
+}
+
+.contactos-info {
+    flex: 1 1 300px;
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #27ae60;
+}
+
+.contactos-info h3 {
+    margin-top: 20px;
+    color: #27ae60;
+}
+
+.contactos-info a {
+    color: #27ae60;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contactos-info a:hover {
+    text-decoration: underline;
+}
+
+.contactos-horario p {
+    margin: 5px 0;
+}

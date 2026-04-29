@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu – Casa Pituxa</title>
+    <title>Galeria – Casa Pituxa</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar.css">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/reservas.css">
     <link rel="stylesheet" href="../css/reviews.css">
     <link rel="stylesheet" href="../css/info-section.css">
-
+    <link rel="stylesheet" href="../css/galeria.css">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -39,61 +39,48 @@
         </nav>
     </header>
 
-    <section class="menu-section">
-        <h2 class="menu-title">Menu Português</h2>
+    <section class="galeria-section">
+        <h2 class="galeria-title">Galeria Casa Pituxa</h2>
+        <p class="galeria-subtitle">Explore o ambiente, os pratos e a essência da nossa casa.</p>
 
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="../pics/menu1pt.jpeg" alt="Menu Português - Página 1">
+        <div class="galeria-grid">
+            <div class="galeria-item">
+                <img src="../pics/entrance.jpg" alt="Entrada da Casa Pituxa">
             </div>
-            <div class="menu-item">
-                <img src="../pics/menu2pt.jpeg" alt="Menu Português - Página 2">
+            <div class="galeria-item">
+                <img src="../pics/outdoor.jpg" alt="Esplanada exterior">
             </div>
-            <div class="menu-item">
-                <img src="../pics/menu3pt.jpeg" alt="Menu Português - Página 3">
+            <div class="galeria-item">
+                <img src="../pics/bar.jpg" alt="Bar do restaurante">
+            </div>
+            <div class="galeria-item">
+                <img src="../pics/deck.jpg" alt="Zona de deck exterior">
+            </div>
+            <div class="galeria-item">
+                <img src="../pics/we-made-some-deliciou.jpg" alt="Sobremesa da Casa Pituxa">
+            </div>
+            <div class="galeria-item">
+                <img src="../pics/join-us-for-dinner-tonight (1).jpg" alt="Menu português">
+            </div>
+            <div class="galeria-item">
+                <img src="../pics/join-us-for-dinner-tonight.jpg" alt="Menu inglês">
+            </div>
+            <div class="galeria-item">
+                <img src="../pics/stjack.jpg" alt="Prato especial Casa Pituxa">
             </div>
         </div>
     </section>
 
-    <section class="menu-section">
-        <h2 class="menu-title">Menu Inglês</h2>
+    <section class="canvas-section">
+        <div class="canvas-container">
+            <h2 class="canvas-title">Deixe a sua marca</h2>
+            <p class="canvas-subtitle">Desenhe ou assine como recordação da sua visita.</p>
 
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="../pics/menu1uk.jpeg" alt="Menu Inglês - Página 1">
+            <div class="canvas-box">
+                <canvas id="pituxa-canvas" width="500" height="280"></canvas>
             </div>
-            <div class="menu-item">
-                <img src="../pics/menu2uk.jpeg" alt="Menu Inglês - Página 2">
-            </div>
-            <div class="menu-item">
-                <img src="../pics/menu3uk.jpeg" alt="Menu Inglês - Página 3">
-            </div>
-        </div>
-    </section>
 
-    <section class="menu-section">
-        <h2 class="menu-title">Vinhos</h2>
-
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="../pics/winered.jpeg" alt="Vinho Tinto">
-            </div>
-            <div class="menu-item">
-                <img src="../pics/winewhite.jpeg" alt="Vinho Branco">
-            </div>
-        </div>
-    </section>
-
-    <section class="menu-section">
-        <h2 class="menu-title">Sobremesas</h2>
-
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="../pics/desert.jpeg" alt="Sobremesa da Casa Pituxa">
-            </div>
-            <div class="menu-item">
-                <img src="../pics/desertwine.jpeg" alt="Sobremesa deliciosa">
-            </div>
+            <button id="clear-canvas" class="canvas-btn">Limpar</button>
         </div>
     </section>
 
@@ -103,10 +90,11 @@
         <p class="footer-time">Agora: <span id="current-time"></span></p>
     </footer>
 
-
+    <script src="../js/canvas.js"></script>
     <script src="../js/datetime.js"></script>
+
     <script>
-        document.querySelectorAll(".menu-item img").forEach(img => {
+        document.querySelectorAll(".galeria-item img").forEach(img => {
             img.addEventListener("click", () => {
                 const lightbox = document.createElement("div");
                 lightbox.classList.add("lightbox");

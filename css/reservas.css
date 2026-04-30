@@ -92,6 +92,13 @@
     transform: translateY(-3px);
 }
 
+
+pituxa-card{
+
+    display: block;
+    margin: 40px auto;
+}
+
 @keyframes fadeUp {
     from {
         transform: translateY(40px);

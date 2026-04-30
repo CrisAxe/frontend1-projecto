@@ -25,24 +25,28 @@
 
 <body>
 
-    <header class="navbar">
-        <div class="brand">
-            <a href="index.html">
-                <img src="pics/LOGO B.png" alt="logo">
-            </a>
-        </div>
+<header class="navbar">
+    <div class="brand">
+        <a href="index.html">
+            <img src="pics/LOGO B.png" alt="logo">
+        </a>
+    </div>
 
+    <button class="hamburger" id="hamburger" aria-label="Abrir menunavegaçao">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-        <nav class="main-nav">
-            <ul>
-                <li><a class="btn-menu" href="html/menu.html">Menu</a></li>
-                <li><a class="btn-galeria" href="html/galeria.html">Galeria</a></li>
-                <li><a class="btn-contactos" href="html/contactos.html">Contactos</a></li>
-                <li><a class="btn-reserva" href="html/reservas.html">Reservar</a></li>
-            </ul>
-        </nav>
-
-    </header>
+    <nav class="main-nav" id="main-nav">
+        <ul>
+            <li><a class="btn-menu" href="html/menu.html">Menu</a></li>
+            <li><a class="btn-galeria" href="html/galeria.html">Galeria</a></li>
+            <li><a class="btn-contactos" href="html/contactos.html">Contactos</a></li>
+            <li><a class="btn-reserva" href="html/reservas.html">Reservar</a></li>
+        </ul>
+    </nav>
+</header>
 
 
 
@@ -145,6 +149,8 @@
     <script src="js/scroll.js"></script>
     <script src="js/reservation.js"></script>
     <script src="js/reviews.js"></script>
+    <script src="js/navbar.js"></script>
+
 
     <script>
         if ("serviceWorker" in navigator) {

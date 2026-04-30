@@ -42,7 +42,8 @@
 
 .review-form {
     margin-top: 40px;
-    background: #f8f8f8;
+    background: #1e8449;
+    color: #fff; 
     padding: 25px;
     border-radius: 10px;
     border-left: 5px solid #27ae60;
@@ -62,7 +63,7 @@
 
 .review-form button {
     background: #27ae60;
-    color: rgb(255, 255, 255);
+    color: #222;
     padding: 12px 20px;
     border: none;
     border-radius: 6px;

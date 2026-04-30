@@ -22,22 +22,29 @@
 
 <body>
 
-    <header class="navbar">
-        <div class="brand">
-            <a href="../index.html">
-                <img src="../pics/LOGO B.png" alt="Logo Casa Pituxa">
-            </a>
-        </div>
+<header class="navbar">
+    <div class="brand">
+        <a href="../index.html">
+            <img src="../pics/LOGO B.png" alt="Logo Casa Pituxa">
+        </a>
+    </div>
 
-        <nav class="main-nav">
-            <ul>
-                <li><a class="btn-menu" href="menu.html">Menu</a></li>
-                <li><a class="btn-galeria" href="galeria.html">Galeria</a></li>
-                <li><a class="btn-contactos" href="contactos.html">Contactos</a></li>
-                <li><a class="btn-reserva" href="reservas.html">Reservar</a></li>
-            </ul>
-        </nav>
-    </header>
+    
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu de navegação">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav">
+        <ul>
+            <li><a class="btn-menu" href="menu.html">Menu</a></li>
+            <li><a class="btn-galeria" href="galeria.html">Galeria</a></li>
+            <li><a class="btn-contactos" href="contactos.html">Contactos</a></li>
+            <li><a class="btn-reserva" href="reservas.html">Reservar</a></li>
+        </ul>
+    </nav>
+</header>
 
     <section class="menu-section">
         <h2 class="menu-title">Menu Português</h2>
@@ -103,7 +110,7 @@
         <p class="footer-time">Agora: <span id="current-time"></span></p>
     </footer>
 
-
+    <script src="../js/navbar.js"></script>
     <script src="../js/datetime.js"></script>
     <script>
         document.querySelectorAll(".menu-item img").forEach(img => {

@@ -22,22 +22,29 @@
 
 <body>
 
-    <header class="navbar">
-        <div class="brand">
-            <a href="../index.html">
-                <img src="../pics/LOGO B.png" alt="Logo Casa Pituxa">
-            </a>
-        </div>
+<header class="navbar">
+    <div class="brand">
+        <a href="../index.html">
+            <img src="../pics/LOGO B.png" alt="Logo Casa Pituxa">
+        </a>
+    </div>
 
-        <nav class="main-nav">
-            <ul>
-                <li><a class="btn-menu" href="menu.html">Menu</a></li>
-                <li><a class="btn-galeria" href="galeria.html">Galeria</a></li>
-                <li><a class="btn-contactos" href="contactos.html">Contactos</a></li>
-                <li><a class="btn-reserva" href="reservas.html">Reservar</a></li>
-            </ul>
-        </nav>
-    </header>
+    
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu de navegação">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav">
+        <ul>
+            <li><a class="btn-menu" href="menu.html">Menu</a></li>
+            <li><a class="btn-galeria" href="galeria.html">Galeria</a></li>
+            <li><a class="btn-contactos" href="contactos.html">Contactos</a></li>
+            <li><a class="btn-reserva" href="reservas.html">Reservar</a></li>
+        </ul>
+    </nav>
+</header>
 
     <section class="galeria-section">
         <h2 class="galeria-title">Galeria Casa Pituxa</h2>
@@ -92,7 +99,7 @@
 
     <script src="../js/canvas.js"></script>
     <script src="../js/datetime.js"></script>
-
+    <script src="../js/navbar.js"></script>
     <script>
         document.querySelectorAll(".galeria-item img").forEach(img => {
             img.addEventListener("click", () => {

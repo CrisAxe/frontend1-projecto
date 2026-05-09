@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="../css/reviews.css">
     <link rel="stylesheet" href="../css/info-section.css">
 
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -28,7 +27,6 @@
             <img src="../pics/LOGO B.png" alt="Logo Casa Pituxa">
         </a>
     </div>
-
 
     <button class="hamburger" id="hamburger" aria-label="Abrir menu de navegação">
         <span></span>
@@ -46,71 +44,81 @@
     </nav>
 </header>
 
-<pituxa-card 
-    title="Nota" 
-    text="Por favor chegue 10 minutos antes da hora marcada.">
-</pituxa-card>
+<reserva-alert mensagem="Por favor chegue 10 minutos antes da hora marcada."></reserva-alert>
 
+<section id="reservas" class="reserva-section reveal-zoom">
+    <h2 class="reserva-title">Reservar</h2>
 
+    <form class="reserva-form">
+        <div class="input-group">
+            <label>Nome</label>
+            <input type="text" name="nome" placeholder="O seu nome" required>
+        </div>
 
-    <section id="reservas" class="reserva-section reveal-zoom">
-        <h2 class="reserva-title">Reservar</h2>
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="exemplo@gmail.com" required>
+        </div>
 
-        <form class="reserva-form">
+        <div class="input-group">
+            <label>Telefone</label>
+            <input type="tel" name="telefone" placeholder="912 345 678" required>
+        </div>
+
+        <div class="input-row">
             <div class="input-group">
-                <label>Nome</label>
-                <input type="text" name="nome" placeholder="O seu nome" required>
-            </div>
-
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="exemplo@gmail.com" required>
-            </div>
-
-            <div class="input-group">
-                <label>Telefone</label>
-                <input type="tel" name="telefone" placeholder="912 345 678" required>
-            </div>
-
-            <div class="input-row">
-                <div class="input-group">
-                    <label>Data</label>
-                    <input type="date" name="data" id="data" required>
-                </div>
-
-                <div class="input-group">
-                    <label>Hora</label>
-                    <select name="hora" id="hora-select" required>
-                        <option value="">Escolha a hora</option>
-                    </select>
-                </div>
+                <label>Data</label>
+                <input type="date" name="data" id="data" required>
             </div>
 
             <div class="input-group">
-                <label>Número de Pessoas</label>
-                <input type="number" name="pessoas" min="1" max="250" placeholder="2" required>
+                <label>Hora</label>
+                <select name="hora" id="hora-select" required>
+                    <option value="">Escolha a hora</option>
+                </select>
             </div>
+        </div>
 
-            <div class="input-group">
-                <label>Observações</label>
-                <textarea name="obs" placeholder="Alguma preferência?"></textarea>
-            </div>
+        <div class="input-group">
+            <label>Número de Pessoas</label>
+            <input type="number" name="pessoas" min="1" max="250" placeholder="2" required>
+        </div>
 
-            <button type="submit" class="btn-reservar">Confirmar Reserva</button>
-        </form>
-    </section>
-    <footer class="site-footer">
-        <p>Casa Pituxa &copy; <span id="current-year"></span></p>
-        <p class="footer-time">Agora: <span id="current-time"></span></p>
-    </footer>
-    
-    <script src="../js/pituxa-card.js"></script>
-    <script src="../js/datetime.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="../js/scroll.js"></script>
-    <script src="../js/reservation.js"></script>
-    <script src="../js/reviews.js"></script>
-    <script src="../js/navbar.js"></script>
+        <div class="input-group">
+            <label>Observações</label>
+            <textarea name="obs" placeholder="Alguma preferência?"></textarea>
+        </div>
+
+        <button type="submit" class="btn-reservar">Confirmar Reserva</button>
+    </form>
+</section>
+
+<section class="reservas-list-section reveal-zoom">
+    <h2 class="reserva-title">Reservas registadas</h2>
+    <table class="reservas-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Pessoas</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="reservas-tbody"></tbody>
+    </table>
+</section>
+
+<pituxa-footer></pituxa-footer>
+
+<script src="../js/pituxa-footer.js"></script>
+<script src="../js/reserva-alert.js"></script>
+<script src="../js/datetime.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="../js/scroll.js"></script>
+<script src="../js/reservation.js"></script>
+<script src="../js/reviews.js"></script>
+<script src="../js/navbar.js"></script>
+
 </body>
-
 </html>

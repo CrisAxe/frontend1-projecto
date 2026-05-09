@@ -1,5 +1,9 @@
+const API_URL = "https://69e6914e68208c1debe7b191.mockapi.io/reservations";
+
 document.addEventListener("DOMContentLoaded", () => {
     const horaSelect = document.getElementById("hora-select");
+    const form = document.querySelector(".reserva-form");
+    const tbody = document.getElementById("reservas-tbody");
 
     function gerarHoras() {
         let hora = 19;
@@ -24,78 +28,102 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     gerarHoras();
-});
 
-const form = document.querySelector(".reserva-form");
-
-form.addEventListener("submit", async function(e) {
-    e.preventDefault(); 
-
-    const nome = form.querySelector("input[name='nome']").value;
-    const email = form.querySelector("input[name='email']").value;
-    const telefone = form.querySelector("input[name='telefone']").value;
-    const data = form.querySelector("input[name='data']").value;
-    const hora = form.querySelector("select[name='hora']").value;
-    const pessoas = form.querySelector("input[name='pessoas']").value;
-    const obs = form.querySelector("textarea[name='obs']").value;
-
-    const dataSelecionada = new Date(data);
-    if (dataSelecionada.getDay() === 0) {
-        Swal.fire({
-            icon: "error",
-            title: "Domingo indisponível",
-            text: "O restaurante está fechado ao domingo.",
-        });
-        return;
+    async function carregarReservas() {
+        try {
+            const res = await fetch(API_URL);
+            const reservas = await res.json();
+            renderReservas(reservas);
+        } catch (err) {
+            Swal.fire("Erro", "Não foi possível carregar as reservas.", "error");
+        }
     }
 
-    if (hora < "19:00" || hora > "23:00") {
-        Swal.fire({
-            icon: "error",
-            title: "Horário inválido",
-            text: "Escolha um horário entre as 19:00 e as 23:00.",
+    function renderReservas(reservas) {
+        tbody.innerHTML = "";
+        reservas.forEach(reserva => {
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+                <td>${reserva.nome}</td>
+                <td>${reserva.data}</td>
+                <td>${reserva.hora}</td>
+                <td>${reserva.pessoas}</td>
+                <td>
+                    <button class="btn-editar" data-id="${reserva.id}">Editar</button>
+                    <button class="btn-apagar" data-id="${reserva.id}">Apagar</button>
+                </td>
+            `;
+
+            tbody.appendChild(tr);
         });
-        return;
     }
 
-    const [h, m] = hora.split(":").map(Number);
-    if (m !== 0 && m !== 30) {
-        Swal.fire({
-            icon: "error",
-            title: "Intervalo inválido",
-            text: "Só pode escolher horários às 00 ou 30 minutos.",
-        });
-        return;
-    }
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-    const dados = { nome, email, telefone, data, hora, pessoas, obs };
+        const dados = {
+            nome: form.nome.value,
+            email: form.email.value,
+            telefone: form.telefone.value,
+            data: form.data.value,
+            hora: document.getElementById("hora-select").value,
+            pessoas: form.pessoas.value,
+            obs: form.obs.value
+        };
 
-    try {
-        const response = await fetch("https://69e6914e68208c1debe7b191.mockapi.io/reservations", {          
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(dados)
-        });
+        const editId = form.dataset.editId;
 
-        if (!response.ok) throw new Error("Erro na API");
+        if (!editId) {
+            await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(dados)
+            });
 
-        
+            Swal.fire("Sucesso", "Reserva criada!", "success");
+        } else {
+            await fetch(`${API_URL}/${editId}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(dados)
+            });
 
-
-        Swal.fire({
-            icon: "success",
-            title: "Reserva enviada!",
-            text: "A sua reserva foi registada com sucesso.",
-            confirmButtonColor: "#27ae60"
-        });
+            Swal.fire("Atualizada", "Reserva atualizada!", "success");
+            delete form.dataset.editId;
+        }
 
         form.reset();
+        carregarReservas();
+    });
 
-    } catch (error) {
-        Swal.fire({
-            icon: "error",
-            title: "Erro ao enviar",
-            text: "Ocorreu um erro. Tente novamente.",
-        });
-    }
+    tbody.addEventListener("click", async (e) => {
+        const btn = e.target;
+        const id = btn.dataset.id;
+
+        if (btn.classList.contains("btn-apagar")) {
+            await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+            Swal.fire("Apagada", "Reserva removida.", "success");
+            carregarReservas();
+        }
+
+        if (btn.classList.contains("btn-editar")) {
+            const res = await fetch(`${API_URL}/${id}`);
+            const reserva = await res.json();
+
+            form.nome.value = reserva.nome;
+            form.email.value = reserva.email;
+            form.telefone.value = reserva.telefone;
+            form.data.value = reserva.data;
+            document.getElementById("hora-select").value = reserva.hora;
+            form.pessoas.value = reserva.pessoas;
+            form.obs.value = reserva.obs;
+
+            form.dataset.editId = id;
+
+            Swal.fire("Modo edição", "Edite e volte a submeter.", "info");
+        }
+    });
+
+    carregarReservas();
 });

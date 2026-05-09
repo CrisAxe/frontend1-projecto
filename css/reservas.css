@@ -92,9 +92,7 @@
     transform: translateY(-3px);
 }
 
-
-pituxa-card{
-
+pituxa-card {
     display: block;
     margin: 40px auto;
 }
@@ -144,4 +142,93 @@ input:valid, select:valid, textarea:valid {
 }
 
 
+/* ================================
+   LISTA DAS RESERVAS — ESTILO FORMULÁRIO
+   ================================ */
 
+.reservas-lista-title {
+    text-align: center;
+    font-size: 32px;
+    margin: 60px 0 25px;
+    font-weight: 700;
+    color: #27ae60;
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.reservas-container {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.reservas-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.reservas-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    color: #333;
+}
+
+.reservas-table thead {
+    background: #27ae60;
+    color: white;
+}
+
+.reservas-table th {
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.reservas-table td {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.reservas-table tbody tr:hover {
+    background: rgba(39,174,96,0.08);
+    transition: 0.2s;
+}
+
+.btn-acao {
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.25s;
+    font-size: 15px;
+}
+
+.btn-editar {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-editar:hover {
+    background: #1e8449;
+    transform: translateY(-2px);
+}
+
+.btn-apagar {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-apagar:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
